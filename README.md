@@ -2,6 +2,20 @@
 
 > D-Transport website
 
+## Deploy D-Transport smart contracts
+``` bash
+# make sure you have truffle and testrpc installed globally
+npm install -g truffle
+npm install -g ethereumjs-testrpc
+
+# launch testrpc
+testrpc
+
+# deploy
+cd smart-contract
+truffle migrate
+```
+
 ## Build Setup
 
 ``` bash
