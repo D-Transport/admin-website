@@ -1,9 +1,6 @@
 <template>
   <div id="main">
-    <md-toolbar>
-      <h1 class="md-title">D-Transport</h1>
-    </md-toolbar>
-
+    <header-toolbar></header-toolbar>
     <div class="main-content">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, rerum? Error sunt, aperiam dolores, atque expedita molestiae tenetur. Quis eveniet accusamus velit explicabo adipisci reiciendis modi eaque quas, officia excepturi.</p>
     </div>
@@ -18,18 +15,16 @@
 </style>
 
 <script>
-import DTransport from '../DTransport';
+ /* eslint-disable */
+import DTransportInstance from '../config/DTransport';
 
-console.log(DTransport);
+console.log(DTransportInstance);
 
-const Web3 = require('web3');
+import HeaderToolbar from './HeaderToolbar.vue'
 
-const web3 = new Web3();
-web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
-
-const coinbase = web3.eth.coinbase;
-const balance = web3.eth.getBalance(coinbase);
-
-
-console.log(balance);
+export default {
+  components: {
+    'header-toolbar': HeaderToolbar
+  }
+};
 </script>
