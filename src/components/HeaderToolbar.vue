@@ -1,14 +1,12 @@
 <template>
-  <md-toolbar>
-    <md-button class="md-icon-button">
-      <md-icon>menu</md-icon>
-    </md-button>
-
-    <h2 class="md-title" style="flex: 1">D-Transport</h2>
-    <h3 class="md-title" style="flex: 1">Balance : {{balance}} ETH</h3>
-    <h3 class="md-title" style="flex: 1">Connected as {{address}}</h3>
-
-  </md-toolbar>
+  <v-toolbar class="blue">
+    <v-toolbar-side-icon></v-toolbar-side-icon>
+    <v-toolbar-title>D-Transport</v-toolbar-title>
+    <v-toolbar-items class="hidden-md-and-down">
+      <v-toolbar-item ripple>Balance : {{balance}}</v-toolbar-item>
+      <v-toolbar-item ripple>Connected as : {{address}}</v-toolbar-item>
+    </v-toolbar-items>
+  </v-toolbar>
 </template>
 
 <script>
