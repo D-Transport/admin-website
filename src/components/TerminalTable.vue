@@ -10,7 +10,8 @@
     <td>{{ props.item.index }}</td>
     <td class="text-xs-right">{{ props.item.address }}</td>
     <td class="text-xs-right">{{ props.item.creationDate }}</td>
-    <td class="text-xs-right">{{ props.item.validationCount }}</td>
+    <td class="text-xs-right">{{ props.item.location }}</td>
+    <td class="text-xs-right">{{ props.item.company }}</td>
   </template>
   </v-data-table>
 </template>
@@ -20,14 +21,15 @@ import DTransportInstance from '../config/DTransport';
 
 export default {
   created() {
-    const usersCount = DTransportInstance.getUsersCount().toNumber();
-    for (let i = 0; i < usersCount; i += 1) {
-      const data = DTransportInstance.getUser(i);
+    const terminalCount = DTransportInstance.getTerminalCount().toNumber();
+    for (let i = 0; i < terminalCount; i += 1) {
+      const data = DTransportInstance.getTerminal(i);
       this.items.push({
         index: i,
         address: data[0],
         creationDate: data[1],
-        validationCount: data[2],
+        location: data[2],
+        company: data[3],
       });
     }
   },
@@ -37,7 +39,8 @@ export default {
       { text: 'Index', value: 'Place' },
       { text: 'Address', value: 'address' },
       { text: 'Creation Date', value: 'creationDate' },
-      { text: 'Validation Count', value: 'validationCount' },
+      { text: 'Location', value: 'location' },
+      { text: 'Company', value: 'company' },
     ],
     items: [
     ],
