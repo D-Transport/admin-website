@@ -7,6 +7,9 @@
       <br>
       <blockquote> Terminals :</blockquote>
       <terminal-table></terminal-table>
+      <br>
+      <blockquote> Companies :</blockquote>
+      <company-table></company-table>
     </div>
     <my-footer></my-footer>
 </div>
@@ -27,6 +30,7 @@ import HeaderToolbar from './HeaderToolbar';
 import Footer from './Footer';
 import UserTable from './UserTable';
 import TerminalTable from './TerminalTable';
+import CompanyTable from './CompanyTable';
 
 
 export default {
@@ -38,7 +42,8 @@ export default {
       DTransportInstance.register({ from: account });
     });
 
-    DTransportInstance.addTerminal('0xc2469c513ecaf8dd4c6ded6885c3924b5c6b5658', '651', '0xc2469c513ecaf8dd4c6ded6885c3924b5c6b5658');
+    DTransportInstance.addTerminal('0xc2469c513ecaf8dd4c6ded6885c3924b5c6b5658', '987', '0xc2469c513ecaf8dd4c6ded6885c3924b5c6b5658', { gas: 999999 });
+    DTransportInstance.addCompany('0xc2469c513ecaf8dd4c6ded6885c3924b5c6b5658', 'CompanyName', { gas: 999999 });
 
     console.log(coinbase);
     console.log(DTransportInstance.register.call());
@@ -50,6 +55,7 @@ export default {
     'my-footer': Footer,
     'user-table': UserTable,
     'terminal-table': TerminalTable,
+    'company-table': CompanyTable,
   },
 };
 </script>
