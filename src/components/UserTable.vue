@@ -23,6 +23,7 @@ export default {
     const usersCount = DTransportInstance.getUsersCount().toNumber();
     for (let i = 0; i < usersCount; i += 1) {
       const data = DTransportInstance.getUser(i);
+      console.log(data[2]);
       this.items.push({
         index: i,
         address: data[0],
@@ -40,12 +41,6 @@ export default {
       { text: 'Validation Count', value: 'validationCount' },
     ],
     items: [
-      {
-        index: 'index',
-        address: 'address',
-        creationDate: 'creationDate',
-        validationCount: 'validationCount',
-      },
     ],
   }),
 };
