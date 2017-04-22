@@ -27,7 +27,7 @@ export default {
       this.items.push({
         index: i,
         address: data[0],
-        creationDate: data[1],
+        creationDate: (new Date((data[1] * 1000) + (2 * 60 * 60 * 1000))).toGMTString(),
         location: data[2],
         company: data[3],
       });

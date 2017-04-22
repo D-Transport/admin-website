@@ -48,7 +48,7 @@ export default {
     terminalAddress: '',
     snackbar: false,
     snackbarMessage: '',
-    timeout: 1000,
+    timeout: 10000,
     bottom: true,
   }),
   methods: {
@@ -65,7 +65,7 @@ export default {
       } else if (result === 2) {
         this.showSnackBar('No authorization');
       } else {
-        this.showSnackBar(result);
+        this.showSnackBar((new Date((result * 1000) + (2 * 60 * 60 * 1000))).toGMTString());
       }
     },
   },
