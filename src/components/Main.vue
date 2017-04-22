@@ -23,8 +23,8 @@
 </style>
 
 <script>
-import DTransportInstance from '../config/DTransport';
-import web3 from '../config/web3';
+// import DTransportInstance from '../config/DTransport';
+// import web3 from '../config/web3';
 
 import HeaderToolbar from './HeaderToolbar';
 import Footer from './Footer';
@@ -35,20 +35,7 @@ import CompanyTable from './CompanyTable';
 
 export default {
   created() {
-    const coinbase = web3.eth.coinbase;
-    web3.eth.defaultAccount = web3.eth.accounts[0];
 
-    web3.eth.accounts.forEach((account) => {
-      DTransportInstance.register({ from: account });
-    });
-
-    DTransportInstance.addTerminal('0xc2469c513ecaf8dd4c6ded6885c3924b5c6b5658', '987', '0xc2469c513ecaf8dd4c6ded6885c3924b5c6b5658', { gas: 999999 });
-    DTransportInstance.addCompany('0xc2469c513ecaf8dd4c6ded6885c3924b5c6b5658', 'CompanyName', { gas: 999999 });
-
-    console.log(coinbase);
-    console.log(DTransportInstance.register.call());
-    console.log(DTransportInstance.users.call(coinbase));
-    console.log(DTransportInstance.addTerminal.call(coinbase + 2, 50, coinbase));
   },
   components: {
     'header-toolbar': HeaderToolbar,
