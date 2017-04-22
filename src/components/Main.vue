@@ -10,12 +10,17 @@
       <br>
       <blockquote> Companies :</blockquote>
       <company-table></company-table>
+      <br>
+      <br>
+      <br>
       <blockquote> GiveAuthorization :</blockquote>
       <give-authorization-form></give-authorization-form>
       <blockquote> GetAuthorizationDate :</blockquote>
       <get-authorization-date-form></get-authorization-date-form>
       <blockquote> Validate :</blockquote>
       <validate-form></validate-form>
+      <blockquote> Get Validations :</blockquote>
+      <get-validations-form></get-validations-form>
     </div>
     <my-footer></my-footer>
 </div>
@@ -37,6 +42,7 @@ import CompanyTable from './CompanyTable';
 import GiveAuthorization from './GiveAuthorization';
 import GetAuthorizationDate from './GetAuthorizationDate';
 import Validate from './Validate';
+import GetValidations from './GetValidations';
 
 export default {
   created() {
@@ -50,6 +56,7 @@ export default {
     'give-authorization-form': GiveAuthorization,
     'get-authorization-date-form': GetAuthorizationDate,
     'validate-form': Validate,
+    'get-validations-form': GetValidations,
   },
 };
 </script>

@@ -59,6 +59,7 @@ export default {
     get() {
       web3.eth.defaultAccount = web3.eth.accounts[0];
       const oldValidationCount = DTransportInstance.users(this.userAddress)[1].toNumber();
+      DTransportInstance.validate(this.terminalAddress);
       if (this.userAddress !== '' && this.terminalAddress !== '') {
         const validationCount = DTransportInstance.users(this.userAddress)[1].toNumber();
         if (oldValidationCount < validationCount) {
