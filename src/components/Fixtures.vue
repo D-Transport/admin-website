@@ -26,12 +26,16 @@ export default {
   created() {
     web3.eth.defaultAccount = web3.eth.accounts[0];
 
-    web3.eth.accounts.forEach((account) => {
-      DTransportInstance.register({ from: account });
-    });
+    for (let i = 0; i < 5; i += 1) {
+      DTransportInstance.register({ from: web3.eth.accounts[i] });
+    }
 
-    DTransportInstance.addTerminal('0xc2469c513ecaf8dd4c6ded6885c3924b5c6b5658', '987', '0xc2469c513ecaf8dd4c6ded6885c3924b5c6b5658', { gas: 999999 });
-    DTransportInstance.addCompany('0xc2469c513ecaf8dd4c6ded6885c3924b5c6b5658', 'CompanyName', { gas: 999999 });
+    const company = web3.eth.accounts[5];
+    DTransportInstance.addCompany(company, 'CompanyName', { gas: 999999 });
+
+    DTransportInstance.addTerminal(web3.eth.accounts[6], '9874', company, { gas: 999999 });
+    DTransportInstance.addTerminal(web3.eth.accounts[7], '1234', company, { gas: 999999 });
+    DTransportInstance.addTerminal(web3.eth.accounts[8], '42', company, { gas: 999999 });
   },
   components: {
     'header-toolbar': HeaderToolbar,
