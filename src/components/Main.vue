@@ -10,6 +10,8 @@
       <br>
       <blockquote> Companies :</blockquote>
       <company-table></company-table>
+      <blockquote> GetAuthorizationDate :</blockquote>
+      <get-authorization-date-form></get-authorization-date-form>
     </div>
     <my-footer></my-footer>
 </div>
@@ -23,19 +25,16 @@
 </style>
 
 <script>
-// import DTransportInstance from '../config/DTransport';
-// import web3 from '../config/web3';
-
 import HeaderToolbar from './HeaderToolbar';
 import Footer from './Footer';
 import UserTable from './UserTable';
 import TerminalTable from './TerminalTable';
 import CompanyTable from './CompanyTable';
+import GetAuthorizationDate from './GetAuthorizationDate';
 
 
 export default {
   created() {
-
   },
   components: {
     'header-toolbar': HeaderToolbar,
@@ -43,6 +42,7 @@ export default {
     'user-table': UserTable,
     'terminal-table': TerminalTable,
     'company-table': CompanyTable,
+    'get-authorization-date-form': GetAuthorizationDate,
   },
 };
 </script>
