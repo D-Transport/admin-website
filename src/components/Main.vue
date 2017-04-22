@@ -10,6 +10,8 @@
       <br>
       <blockquote> Companies :</blockquote>
       <company-table></company-table>
+      <blockquote> GiveAuthorization :</blockquote>
+      <give-authorization-form></give-authorization-form>
       <blockquote> GetAuthorizationDate :</blockquote>
       <get-authorization-date-form></get-authorization-date-form>
     </div>
@@ -30,6 +32,7 @@ import Footer from './Footer';
 import UserTable from './UserTable';
 import TerminalTable from './TerminalTable';
 import CompanyTable from './CompanyTable';
+import GiveAuthorization from './GiveAuthorization';
 import GetAuthorizationDate from './GetAuthorizationDate';
 
 
@@ -42,6 +45,7 @@ export default {
     'user-table': UserTable,
     'terminal-table': TerminalTable,
     'company-table': CompanyTable,
+    'give-authorization-form': GiveAuthorization,
     'get-authorization-date-form': GetAuthorizationDate,
   },
 };
