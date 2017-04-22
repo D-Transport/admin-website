@@ -4,7 +4,7 @@
       <v-container fluid>
         <v-row row>
           <v-col xs4>
-            <v-subheader>User address</v-subheader>
+            <v-subheader>For User address</v-subheader>
           </v-col>
           <v-col xs8>
             <v-text-field v-model="userAddress"
@@ -15,7 +15,7 @@
         </v-row>
         <v-row row>
           <v-col xs4>
-            <v-subheader>From Terminal address</v-subheader>
+            <v-subheader>To Terminal address</v-subheader>
           </v-col>
           <v-col xs8>
             <v-text-field v-model="terminalAddress"
@@ -24,7 +24,7 @@
             ></v-text-field>
           </v-col>
         </v-row>
-        <v-btn v-on:click.native="get" light default>Give</v-btn>
+        <v-btn v-on:click.native="get" light default>Validate</v-btn>
       </v-container>
     </v-card-text>
     <v-snackbar :timeout="timeout" :bottom="bottom" v-model="snackbar">
@@ -58,9 +58,16 @@ export default {
     },
     get() {
       web3.eth.defaultAccount = web3.eth.accounts[0];
+      const oldValidationCount = DTransportInstance.users(this.userAddress)[1].toNumber();
       if (this.userAddress !== '' && this.terminalAddress !== '') {
-        DTransportInstance.giveAuthorization(this.userAddress, { from: this.terminalAddress });
-        this.showSnackBar('Authorization gived');
+        const validationCount = DTransportInstance.users(this.userAddress)[1].toNumber();
+        if (oldValidationCount < validationCount) {
+          this.showSnackBar('Validation Success');
+        } else {
+          this.showSnackBar('Validation Failed');
+        }
+      } else {
+        this.showSnackBar('Fields are empty');
       }
     },
   },

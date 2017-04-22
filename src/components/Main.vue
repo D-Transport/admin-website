@@ -14,6 +14,8 @@
       <give-authorization-form></give-authorization-form>
       <blockquote> GetAuthorizationDate :</blockquote>
       <get-authorization-date-form></get-authorization-date-form>
+      <blockquote> Validate :</blockquote>
+      <validate-form></validate-form>
     </div>
     <my-footer></my-footer>
 </div>
@@ -34,7 +36,7 @@ import TerminalTable from './TerminalTable';
 import CompanyTable from './CompanyTable';
 import GiveAuthorization from './GiveAuthorization';
 import GetAuthorizationDate from './GetAuthorizationDate';
-
+import Validate from './Validate';
 
 export default {
   created() {
@@ -47,6 +49,7 @@ export default {
     'company-table': CompanyTable,
     'give-authorization-form': GiveAuthorization,
     'get-authorization-date-form': GetAuthorizationDate,
+    'validate-form': Validate,
   },
 };
 </script>
