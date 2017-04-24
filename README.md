@@ -17,6 +17,7 @@ testrpc
 cd smart-contract
 truffle migrate
 ```
+Get the returned contract address and change it in `/src/config/DTransport.js`
 
 ## Build and Run the app
 
