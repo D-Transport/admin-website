@@ -1,6 +1,8 @@
 # d-transport-website
 
-> D-Transport website
+D-Transport website is an administration website for [D-Transport smart contract](https://github.com/D-Transport/smart-contract).
+- Visualize datas stored in the smart contract (Companies, Terminals and Users)
+- Interact and call smart contract functions
 
 ## Deploy D-Transport smart contracts
 ``` bash
@@ -40,3 +42,6 @@ npm run e2e
 # run all tests
 npm test
 ```
+
+## Load fixtures
+To import fixtures datas, navigate to http://localhost:8080/#/fixtures
